@@ -29,7 +29,6 @@ class ViewController: UIViewController {
         tvText1.text = "开蔚来的明总"
         tvText2.text = "考研的明总"
         uiButton?.titleLabel?.text = "点我，即可钓蟹"
-    
         ///随便加点注释
         
     }
