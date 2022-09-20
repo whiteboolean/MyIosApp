@@ -28,19 +28,19 @@ class ViewController: UIViewController {
         tvText.text = "你好，明神，这是在代码中设置的！"
         tvText1.text = "开蔚来的明总"
         tvText2.text = "考研的明总"
-        uiButton?.titleLabel?.text = "点我，即可钓蟹"
+        ///uiButton?.titleLabel?.text = "点我，即可钓蟹"
         ///随便加点注释
-        
+        uiButton.addTarget(self, action: #selector(buttonClick(_:)), for: .touchUpInside)
+    }
+    var count = 1
+    @IBAction func uiButton(_ sender: UIButton) {
+        count+=1
+        print("我是小按钮:\(count)")
+        sender.setTitle("点击了\(count)", for: .normal)
     }
     
-    var a = 1
-
-    @IBAction func clickButton(_ sender: Any) {
-        a+=1
-        print("a:\(a)")
-        
-    
-        ///sender.setTitle("你好", for: .normal)
+    @objc func buttonClick(_ sender:UIButton){
+        print("我点了咋啦")
     }
     
 }
