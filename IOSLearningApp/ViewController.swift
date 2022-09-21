@@ -22,6 +22,8 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var uiButton: UIButton!
     
+    @IBOutlet weak var utfTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -32,6 +34,7 @@ class ViewController: UIViewController {
         ///随便加点注释
         uiButton.addTarget(self, action: #selector(buttonClick(_:)), for: .touchUpInside)
     }
+
     var count = 1
     @IBAction func uiButton(_ sender: UIButton) {
         count+=1
@@ -43,5 +46,26 @@ class ViewController: UIViewController {
         print("我点了咋啦")
     }
     
+    @IBAction func loginClick(_ sender: UIButton) {
+        let inputText = utfTextField.text!
+        
+        if inputText.isEmpty{
+            //如果为空
+            //提示为空
+            print("用户名不能为空")
+            return
+        }
+        print("输入文本为:\(inputText)")
+    }
+    
+    @IBAction func openPage(_ sender: UIButton) {
+        print("点击了第二个按钮")
+       let controller =  storyboard!.instantiateViewController(withIdentifier: "Second")
+        
+        ///全屏
+        controller.modalPresentationStyle = .fullScreen
+        //关闭当前界面
+        present(controller,animated: true)
+    }
 }
 
