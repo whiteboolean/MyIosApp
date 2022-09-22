@@ -24,6 +24,8 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var utfTextField: UITextField!
     
+    @IBOutlet weak var iconView: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -33,6 +35,8 @@ class ViewController: UIViewController {
         ///uiButton?.titleLabel?.text = "点我，即可钓蟹"
         ///随便加点注释
         uiButton.addTarget(self, action: #selector(buttonClick(_:)), for: .touchUpInside)
+        
+        iconView.image = UIImage(named: "girl2")
     }
 
     var count = 1
@@ -57,6 +61,9 @@ class ViewController: UIViewController {
         }
         print("输入文本为:\(inputText)")
     }
+    
+
+    
     
     @IBAction func openPage(_ sender: UIButton) {
         print("点击了第二个按钮")
